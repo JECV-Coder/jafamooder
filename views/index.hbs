@@ -1,0 +1,169 @@
+<!--<h1>{{clima.temperatura}}</h1>
+<table border="1">
+  <tr>
+    <td>Codigo</td><td>Descripcion</td><td>Precio</td>
+  </tr>
+{{#each articulos}}
+  <tr>  
+     <td>{{codigo}} </td> <td>{{descripcion}}</td> <td>{{precio}}</td>
+  </tr>   
+{{/each}}
+</table>
+<p>Descuentos vigentes el día lunes:{{descuento.lunes}}</p>
+<p>Descuentos vigentes el día martes:{{descuento.martes}}</p> -->
+
+
+
+<!doctype html>
+<html lang="en" style="background: var(--negro) 0% 0% no-repeat padding-box;">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/0c6c530dc5.css">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+
+<!-- navbar -->
+<header class="principal fixed-top">
+    <!--<nav class="navb ">
+        <a href="#"><h1 class="titulo titulo2">JAFA| <strong class="mood">MOODER</strong></h1></a>
+    </nav>-->
+{{#each usuario}}
+    <nav class="navbar navbar-expand-lg navbar-dark  color" style="min-height: 80px">
+        <a class="navbar-brand" href="#"><h1 class="titulo titulo2">JAFA| <strong class="mood">MOODER</strong></h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item dropdown">
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 60px">
+                <img class=" mr-sm-2" style="max-height: 60px; max-width: 60px"  aria-label="Search" alt="" src="https://1000logos.net/wp-content/uploads/2017/08/Spotify-Logo.png">
+                <h5 class="my-2 my-sm-0" type="submit" style="color: #FFFFFF">{{nombre}}</h5>
+            </form>
+        </div>
+    </nav>
+{{/each}}
+
+</header>
+<!-- navbar -->
+
+<!-- clima -->
+<div class="clima ">
+
+
+    <div class="imagen">
+        <img src="./img/sol.png"  alt="" class="sol">
+    </div>
+
+    <h2 class="temp">{{clima.temperatura}}°c</h2>
+    <h3 class="info">Centigrados</h3>
+
+    <h2 class="temp">{{clima.humedad}}%</h2>
+    <h3 class="info">Humedad</h3>
+
+</div>
+<!-- clima -->
+
+
+
+
+<!-- Seccion de playlist -->
+<div class="playlista">
+
+
+    <h1 class="ligas">{{titulo}} | Canciones</h1>
+
+    <table class="tabla " align="center">
+        <tr class="cabeceraTabla">
+            <td>
+                Caratula
+            </td>
+            <td>
+                Titulo
+            </td>
+            <td>
+                Artista
+            </td>
+            <td>
+                Duracion
+            </td>
+        </tr>
+
+        {{#each rolas}}
+            <tr id="music">
+                <td class="numeroCancion" >
+                    <img src="{{image}}" alt="" style="max-height:100px; max-width:100px;" class="sol">
+                </td>
+                <td>
+                    {{nombre}}
+                </td>
+                <td>
+                    {{artista}}
+                </td>
+                <td>
+                    {{duration}}
+                </td>
+                <td>
+                    <button value="{{url}}" class="player"><i class="fa fa-play"></i></button>
+
+                </td>
+            </tr>
+        {{/each}}
+
+    </table>
+
+
+
+
+</div>
+<!-- Seccion de playlist -->
+
+
+<!-- footer -->
+<div class="reproductor fixed-bottom">
+    <iframe style="background-color: #2E3033!important;" id="declinedframe"  src="https://open.spotify.com/embed/playlist/{{listaderepro}}" width="100%" height="300px!important"  frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
+<!-- footer -->
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    /*$(function() {
+
+        $("#declinedframe").attr("src", "https://open.spotify.com/embed/playlist/3YGrEkgOiTsEeKHgs7kOh0");
+    });*/
+
+    $("#music button").click(function(){
+        $("#declinedframe").attr("src", 'https://open.spotify.com/embed/track/' + $(this).val());
+
+    })
+</script>
+<script src="https://use.fontawesome.com/0c6c530dc5.js"></script>
+</body>
+</html>
